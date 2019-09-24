@@ -1,49 +1,43 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Image, Text, StyleSheet, View } from 'react-primitives';
 import { Button, ToastAndroid } from 'react-native';
-import PropTypes from 'prop-types';
 
 //import { newGame } from '../services/GameService';
+const navigationOptions = {
+  title: '15 Puzzle App',
+};
 
-export default class HomeScreen extends Component {
-    static navigationOptions = {
-        title: '15 Puzzle App',
-    };
+interface HomeScreenInterface {
+  navigation: Navigation;
+}
 
-    static propTypes = {
-        navigation: PropTypes.object.isRequired,
-    };
+export const HomeScreen: React.FunctionComponent<HomeScreenInterface> = ({ navigation }) => {
+  const bannerImg = require('../ressources/images/banner.jpg');
 
-    requestNewSingleGame = () => {
-        this.requestNewGame('single');
-    };
+  function requestNewSingleGame() {
+     requestNewGame("single");
+  }
 
-    requestNewGame = async mode => {
-        try {
-            const game = await newGame()(mode);
-            const { navigation } = this.props;
-            navigation.navigate('Game', {
-                game,
-            });
-        } catch (error) {
-            ToastAndroid.showWithGravity(
-                'A server error occured, please retry later.',
-                ToastAndroid.LONG,
-                ToastAndroid.BOTTOM,
-            );
-        }
-    };
+  function requestNewGame(mode: string) {
+      // try {
+      //       const game = await newGame()(mode);
+      //       const { navigation } = this.props;
+      //       navigation.navigate('Game', {
+      //           game,
+      //       });
+      //   } catch (error) {
+      //       ToastAndroid.showWithGravity(
+      //           'A server error occured, please retry later.',
+      //           ToastAndroid.LONG,
+      //           ToastAndroid.BOTTOM,
+      //       );
+      //   }
+  }
 
-    openGames = () => {
-        const { navigation } = this.props;
-        navigation.navigate('Games');
-    };
-
-    render() {
-        const bannerImg = require('../ressources/images/banner.jpg');
-
-        return (
-            <View style={styles.page}>
+  function openGames() {
+    navigation.navigate('Games');
+  };
+  return (<View style={styles.page}>
                 <View style={styles.container}>
                     <View style={styles.bloc}>
                         <Text style={styles.welcome}>
@@ -64,10 +58,10 @@ export default class HomeScreen extends Component {
                         />
                     </View>
                 </View>
-            </View>
-        );
-    }
-}
+            </View>);
+};
+
+export default HomeScreen;
 
 const styles = StyleSheet.create({
     actions: {
