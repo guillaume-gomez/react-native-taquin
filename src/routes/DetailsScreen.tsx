@@ -1,10 +1,15 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import styles from "../../styles";
 
-const DetailScreen : React.FunctionComponent = (props) => {
+
+const DetailScreen : React.FunctionComponent = ({navigation}) => {
   return (
     <View style={styles.container}>
+     <Button
+          title="Go Home"
+          onPress={() => navigation.push('Home')}
+        />
       <Text>Detail Screen</Text>
     </View>
   );
