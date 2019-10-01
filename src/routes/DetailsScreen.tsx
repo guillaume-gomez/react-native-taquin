@@ -6,11 +6,11 @@ import styles from "../../styles";
 const DetailScreen : React.FunctionComponent = ({navigation}) => {
   return (
     <View style={styles.container}>
+     <Text>Detail Screen</Text>
      <Button
           title="Go Home"
           onPress={() => navigation.push('Home')}
         />
-      <Text>Detail Screen</Text>
     </View>
   );
 };
