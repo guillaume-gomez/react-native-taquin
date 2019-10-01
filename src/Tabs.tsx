@@ -2,6 +2,7 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./routes/HomeScreen";
 import DetailsScreen from "./routes/DetailsScreen";
+import EndGameModal from "./routes/EndGameModal";
 
 const AppNavigator = createStackNavigator({
     Home: HomeScreen,
@@ -22,4 +23,19 @@ const AppNavigator = createStackNavigator({
   }
 );
 
-export default createAppContainer(AppNavigator);
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: AppNavigator,
+    },
+    MyModal: {
+      screen: EndGameModal,
+    },
+  },
+  {
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
+
+export default createAppContainer(RootStack);
