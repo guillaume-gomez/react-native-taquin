@@ -2,11 +2,13 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import HomeScreen from "./routes/HomeScreen";
 import DetailsScreen from "./routes/DetailsScreen";
+import GameScreen from "./routes/GameScreen";
 import EndGameModal from "./routes/EndGameModal";
 
 const AppNavigator = createStackNavigator({
     Home: HomeScreen,
     Details: DetailsScreen,
+    Game: GameScreen
   },
   {
     initialRouteName: 'Home',
