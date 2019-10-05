@@ -6,10 +6,18 @@ const HomeScreen : React.FunctionComponent = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
-      <Button
-          title="Go to Details... again"
-          onPress={() => navigation.push('Details')}
-        />
+      <View>
+        <Button
+            title="Play"
+            onPress={() => navigation.push('Game')}
+          />
+      </View>
+      <View>
+        <Button
+            title="Go to Details... again"
+            onPress={() => navigation.push('Details')}
+          />
+      </View>
     </View>
   );
 };
