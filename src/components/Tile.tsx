@@ -45,27 +45,23 @@ const Tile : React.FunctionComponent<TileInterface> = ({
 
   const tileStyle =
     tileImage && tileImageCoords
-        ? {
-            backgroundImage: `url(${tileImage})`,
-            backgroundPosition: tileImageCoords,
-            ...style,
-          }
-        : {
-            ...style,
-  };
+      ? {
+          backgroundImage: `url(${tileImage})`,
+          backgroundPosition: tileImageCoords,
+          ...style,
+        }
+      : {
+          ...style,
+        };
 
   return (
-    <View
-      className={tileClass}
-      style={tileStyle}
-      onClick={this.handleClick}
-    >
-        {/*<Fade in={showNumbers}>
-            <span className="puzzle-tile-value">{tileValue}</span>
-        </Fade>*/}
-        <Text className="puzzle-tile-value">{tileValue}</Text>
-    </View>
+    <Text className="puzzle-tile-value">{tileValue}</Text>
   );
 };
 
 export default Tile;
+
+//in return
+        /*<Fade in={showNumbers}>
+            <Text className="puzzle-tile-value">{tileValue}</Text>
+        </Fade>*/
