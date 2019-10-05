@@ -63,7 +63,7 @@ const Tile : React.FunctionComponent<TileInterface> = ({
         {/*<Fade in={showNumbers}>
             <span className="puzzle-tile-value">{tileValue}</span>
         </Fade>*/}
-        <Text>COucou hibou</Text>
+        <Text className="puzzle-tile-value">{tileValue}</Text>
     </View>
   );
 };
