@@ -8,8 +8,10 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@types/classnames": "^2.2.9",
     "@types/react-navigation": "^3.0.8",
     "@types/react-primitives": "^0.6.2",
+    "classnames": "^2.2.6",
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
