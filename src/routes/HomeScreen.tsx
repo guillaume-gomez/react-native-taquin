@@ -14,7 +14,7 @@ const HomeScreen : React.FunctionComponent = ({navigation}) => {
       </View>
       <View>
         <Button
-            title="Go to Details... again"
+            title="Go to Details"
             onPress={() => navigation.push('Details')}
           />
       </View>
