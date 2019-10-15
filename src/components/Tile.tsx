@@ -53,14 +53,12 @@ const Tile : React.FunctionComponent<TileInterface> = ({
       : {
           ...style,
         };
-  console.log(tileStyle)
-
+   console.log(tileStyle)
   return (
     <View 
-      className={tileClass}
       style={tileStyle}
       onClick={handleClick}>
-      <Text className="puzzle-tile-value">{tileValue}</Text>
+      <Text className={styles.tileValue}>{tileValue}</Text>
     </View>
   );
 };

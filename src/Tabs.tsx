@@ -11,7 +11,7 @@ const AppNavigator = createStackNavigator({
     Game: GameScreen
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Game',
     /* The header config from HomeScreen is now here */
     defaultNavigationOptions: {
       headerStyle: {

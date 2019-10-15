@@ -2,34 +2,36 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   Button,
   Platform
 } from 'react-native';
 import styles from "../../styles";
 
-import Tile from "../components/Tile";
+import Grid from "../components/Grid";
+import {buildGrid} from "../gameEngine/game";
 
 const GameScreen : React.FunctionComponent = ({navigation}) => {
   
-  function handleClickTile() {
+  function onClickTile() {
     console.log("coucou");
   }
 
+  function onClick() {
+    return "";
+  }
+
+   const grid = buildGrid(4);
+
   return (
-    <View style={styles.container}>
-        <Tile
-          enabled={true}
-          key={"tileValue"}
-          onClick={handleClickTile}
-          pulse={false}
-          showNumbers={true}
-          style={{}}
-          tileImage={"imageUrl"}
-          tileImageCoords={"imageCoords[tileValue]"}
-          tileValue={"tileValue"}
+    <View className={styles.container}>
+       <Grid
+          onClick={onClickTile}
+          grid={grid}
+          readOnly={true}
+          resolvedGrid={[]}
+          showNumbers={false}
+          tileToHighLight={2}
       />
-      
     </View>
   );
 };
