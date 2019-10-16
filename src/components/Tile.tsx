@@ -58,7 +58,7 @@ const Tile : React.FunctionComponent<TileInterface> = ({
     <View 
       style={tileStyle}
       onClick={handleClick}>
-      <Text className={styles.tileValue}>{tileValue}</Text>
+      <Text style={styles.tileValue}>{tileValue}</Text>
     </View>
   );
 };

@@ -23,7 +23,7 @@ const GameScreen : React.FunctionComponent = ({navigation}) => {
    const grid = buildGrid(4);
 
   return (
-    <View className={styles.container}>
+    <View style={styles.container}>
        <Grid
           onClick={onClickTile}
           grid={grid}

@@ -7,39 +7,36 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  grid: {
+    flex: 1,
+    backgroundColor: "green",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   gridColumn: {
-    // alignItems: "center",
-    // display: "flex",
-    // flexDirection: "column",
-    // justifyContent: "center",
-    // padding: "1em",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   gridRow: {
-    flex: 1,
     alignContent: "center",
     flexDirection: 'row',
-    alignItems: 'stretch',
   },
   tile: {
-    // alignItems: "center",
-    // display: "flex",
-    // backgroundColor: "#d32f2f",
-    // //backgroundSize: "25em",
-    // height: "5em",
-    // justifyContent: "center",
-    // margin: "0.25em",
-    // width: "5em"
+    width: 80,
+    height: 80,
+    display: "flex",
+    backgroundColor: "#d32f2f",
+    justifyContent: "center",
   },
   tileEmpty: {
-    // height: "5em",
-    // margin: "0.25em",
-    // width: "5em"
+    width: 80,
+    height: 80
   },
   tileValue: {
-    color: "white",
+    fontSize: 30,
     textAlign: "center",
+    color: "white",
+    alignItems: "center",
   }
-
-
 
 });

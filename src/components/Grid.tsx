@@ -86,38 +86,40 @@ const Grid : React.FunctionComponent<GridInterface> = ({
   }, []);
 
   return (
-    <View className={styles.gridRow}>
-      {grid.map((row, rowKey) => (
-        <View className={styles.gridColumn} key={rowKey}>
-          {row.map(
-            tileValue =>
-              tileValue === 0 ? (
-                <View
+    <View style={styles.grid}>
+      <View style={styles.gridColumn}>
+        {grid.map((row, rowKey) => (
+          <View style={styles.gridRow} key={rowKey}>
+            {row.map(
+              tileValue =>
+                tileValue === 0 ? (
+                  <View
+                      key={tileValue}
+                      style={styles.tileEmpty}
+                  />
+              ) : (
+                <Tile
+                    enabled={
+                      !readOnly &&
+                      isTileInMovableTiles(
+                          grid,
+                          tileValue,
+                      )
+                    }
                     key={tileValue}
-                    className={styles.tileEmpty}
+                    onClick={handleClickTile}
+                    pulse={tileValue === tileToHighlight}
+                    showNumbers={showNumbers}
+                    style={styles.tile}
+                    tileImage={imageUrl}
+                    tileImageCoords={imageCoords[tileValue]}
+                    tileValue={tileValue}
                 />
-            ) : (
-              <Tile
-                  enabled={
-                    !readOnly &&
-                    isTileInMovableTiles(
-                        grid,
-                        tileValue,
-                    )
-                  }
-                  key={tileValue}
-                  onClick={handleClickTile}
-                  pulse={tileValue === tileToHighlight}
-                  showNumbers={showNumbers}
-                  style={{width: 50, height: 50, backgroundColor: "red"}}
-                  tileImage={imageUrl}
-                  tileImageCoords={imageCoords[tileValue]}
-                  tileValue={tileValue}
-              />
-            ),
-          )}
-        </View>
-      ))}
+              ),
+            )}
+          </View>
+        ))}
+      </View>
     </View>
   );
 }
