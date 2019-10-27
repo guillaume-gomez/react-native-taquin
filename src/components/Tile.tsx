@@ -6,7 +6,8 @@ import {
   Text,
   StyleSheet,
   Button,
-  Platform
+  Platform,
+  Image
 } from 'react-native';
 import styles from "../../styles";
 
@@ -42,23 +43,21 @@ const Tile : React.FunctionComponent<TileInterface> = ({
   }
 
   const tileClass = ClassNames('puzzle-tile', 'z-depth-3', { pulse: pulse, 'puzzle-tile-hover': enabled });
-
-  const tileStyle =
-    tileImage && tileImageCoords
-      ? {
-          backgroundImage: `url(${tileImage})`,
-          backgroundPosition: tileImageCoords,
-          ...style,
-        }
-      : {
-          ...style,
-        };
-   console.log(tileStyle)
+  
+  console.log(tileImage)
   return (
     <View 
-      style={tileStyle}
+      style={style}
       onClick={handleClick}>
-      <Text style={styles.tileValue}>{tileValue}</Text>
+      {
+       !tileImage ? 
+         <Text style={styles.tileValue}>{tileValue}</Text>
+         :
+         <Image
+          style={{width: 50, height: 50}}
+          source={tileImage}
+        />
+      }
     </View>
   );
 };
