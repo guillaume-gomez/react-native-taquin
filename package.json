@@ -12,6 +12,7 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "@react-native-community/image-editor": "^2.1.0",
     "@types/classnames": "^2.2.9",
     "@types/react-navigation": "^3.0.8",
     "@types/react-primitives": "^0.6.2",

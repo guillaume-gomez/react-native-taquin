@@ -1090,6 +1090,11 @@
     xcode "^2.0.0"
     xmldoc "^0.4.0"
 
+"@react-native-community/image-editor@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@react-native-community/image-editor/-/image-editor-2.1.0.tgz#ddae70977b076f50f16507032c4d642c1f03c0ea"
+  integrity sha512-hdIK0wfbQIjqzq+YbWPllf3xpm5Yc7E5UDvzZy49exvcWyBdBiZofao6H0d4xC4WZq71Wv30rQmBIJX+gSo0Jg==
+
 "@react-navigation/core@^3.5.1":
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.1.tgz#7a2339fca3496979305fb3a8ab88c2ca8d8c214d"
