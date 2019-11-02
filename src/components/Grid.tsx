@@ -46,7 +46,7 @@ interface GridInterface {
   readOnly: boolean;
   resolvedGrid: Array;
   showNumbers: boolean;
-  tileToHighlight: Pnumber;
+  tileToHighlight: number;
 }
 
 const Grid : React.FunctionComponent<GridInterface> = ({
@@ -61,7 +61,7 @@ const Grid : React.FunctionComponent<GridInterface> = ({
   const [translating, setTranslating] = useState(false);
   const [translatingDir, setTranslatingDir] = useState({ x: 0,y: 0 });
   const [translatingTile, setTranslatingTile] = useState(0);
-  const [imageCoords, setImageCoords] = useState([]);
+  const [imageCoords, setImageCoords] = useState({});
   const [imageUrl, setImageUrl] = useState("");
 
   function handleClickTile(tile) {
