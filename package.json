@@ -12,12 +12,12 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@react-native-community/image-editor": "^2.1.0",
     "@types/classnames": "^2.2.9",
     "@types/react-navigation": "^3.0.8",
     "@types/react-primitives": "^0.6.2",
     "classnames": "^2.2.6",
     "expo": "^35.0.0",
+    "expo-image-manipulator": "~7.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
