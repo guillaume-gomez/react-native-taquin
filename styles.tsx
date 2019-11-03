@@ -37,6 +37,12 @@ export default StyleSheet.create({
     textAlign: "center",
     color: "white",
     alignItems: "center",
+  },
+  tileImg: {
+    width: 80,
+    height: 80,
+    display: "flex",
+    alignItems: "center"
   }
 
 });

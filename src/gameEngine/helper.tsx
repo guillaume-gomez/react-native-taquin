@@ -1,4 +1,4 @@
-export const associateTileToBackground = (grid) => {
+export function associateTileToBackground(grid) {
   const tileSize = grid.length > 0 ? 100 / grid.length : 0; // 100%
 
   let tileToBg = {};
@@ -10,7 +10,7 @@ export const associateTileToBackground = (grid) => {
   return tileToBg;
 };
 
-export const choiceInArray = (list, rand = Math.random()) => {
+export function choiceInArray(list, rand = Math.random()) {
   if (!Array.isArray(list)) {
     throw Error('The list should be an array');
   }

@@ -47,6 +47,7 @@ interface GridInterface {
   resolvedGrid: Array;
   showNumbers: boolean;
   tileToHighlight: number;
+  imageUrls: string[];
 }
 
 const Grid : React.FunctionComponent<GridInterface> = ({
@@ -55,15 +56,15 @@ const Grid : React.FunctionComponent<GridInterface> = ({
   readOnly = true,
   resolvedGrid,
   showNumbers = true,
-  tileToHighlight
+  tileToHighlight,
+  imageUrls
 }) => {
 
   const [translating, setTranslating] = useState(false);
   const [translatingDir, setTranslatingDir] = useState({ x: 0,y: 0 });
   const [translatingTile, setTranslatingTile] = useState(0);
   const [imageCoords, setImageCoords] = useState({});
-  const [imageUrl, setImageUrl] = useState("");
-
+  
   function handleClickTile(tile) {
     const dir = translateTile(grid, tile, SIZE_TILE);
     setTranslating(true);
@@ -76,22 +77,13 @@ const Grid : React.FunctionComponent<GridInterface> = ({
     }, DURATION_TRANSLATE);
   };
 
-  useEffect(() => {
-      const imageCoords = associateTileToBackground(resolvedGrid);
-      const imageUrl = choiceInArray(
-          IMAGE_URLS.length > 0 ? IMAGE_URLS : [DEFAULT_IMAGE_URL],
-      );
-      setImageUrl(imageUrl);
-      setImageCoords(imageCoords);
-  }, []);
-
   return (
     <View style={styles.grid}>
       <View style={styles.gridColumn}>
         {grid.map((row, rowKey) => (
           <View style={styles.gridRow} key={rowKey}>
             {row.map(
-              tileValue =>
+              (tileValue, columnKey) =>
                 tileValue === 0 ? (
                   <View
                       key={tileValue}
@@ -111,7 +103,7 @@ const Grid : React.FunctionComponent<GridInterface> = ({
                     pulse={tileValue === tileToHighlight}
                     showNumbers={showNumbers}
                     style={styles.tile}
-                    tileImage={imageUrl}
+                    tileImage={imageUrls[rowKey + (columnKey * grid.length)]}
                     tileImageCoords={imageCoords[tileValue]}
                     tileValue={tileValue}
                 />

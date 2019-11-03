@@ -11,7 +11,6 @@ import {
 } from 'react-native';
 import styles from "../../styles";
 
-
 //import Fade from '../transitions/Fade';
 
 interface TileInterface {
@@ -41,10 +40,10 @@ const Tile : React.FunctionComponent<TileInterface> = ({
       onClick(tileValue);
     }
   }
-
   const tileClass = ClassNames('puzzle-tile', 'z-depth-3', { pulse: pulse, 'puzzle-tile-hover': enabled });
+  //console.log(tileValue)
+  const coords = tileImageCoords ? tileImageCoords.split("%") : [0, 0];
   
-  console.log(tileImage)
   return (
     <View 
       style={style}
@@ -54,8 +53,8 @@ const Tile : React.FunctionComponent<TileInterface> = ({
          <Text style={styles.tileValue}>{tileValue}</Text>
          :
          <Image
-          style={{width: 50, height: 50}}
-          source={tileImage}
+          style={styles.tileImg}
+          source={{uri: tileImage}}
         />
       }
     </View>

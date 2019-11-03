@@ -1,4 +1,4 @@
-export { DEFAULT_PUZZLE_SIZE } from "../constants";
+import { DEFAULT_PUZZLE_SIZE } from "../constants";
 
 export const EMPTY_VALUE = 0;
 
@@ -139,8 +139,6 @@ export const dirFromMove = (grid, tile) => {
     x: coordsEmptyTile.x - coords.x,
   };
 };
-
-
 
 
 export const SHUFFLE_DURATION = 2000;
