@@ -20,6 +20,5 @@ export async function splitImagesIntoTiles(nbCellsRow: number, imageWidth: numbe
       spritesUri = [...spritesUri, manipResult.uri];
     }
   }
-  console.log(spritesUri)
   return spritesUri;
 }
